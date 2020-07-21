@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+	<title>Digital Watch</title>
+</head>
+<body>
+	<div class="main-container">
+	   <div class="f"></div>
+	   <div class="e"></div>
+	   <div class="a"></div>
+	   <div class="g"></div>
+	   <div class="b"></div>
+	   <div class="c"></div>
+	   <div class="d"></div>
+	   <div class="second">
+	   <div class="f"></div>
+	   <div class="e"></div>
+	   <div class="a"></div>
+	   <div class="g"></div>
+	   <div class="b"></div>
+	   <div class="c"></div>
+	   <div class="d"></div>
+	   
+	   </div>
+	   <div class="dots">
+	   <div class="dot1"></div>
+	   <div class="dot2"></div>
+	   </div>
+	   <div class="third">
+	   <div class="f"></div>
+	   <div class="e"></div>
+	   <div class="a"></div>
+	   <div class="g"></div>
+	   <div class="b"></div>
+	   <div class="c"></div>
+	   <div class="d"></div>
+	   
+	   </div>
+	   <div class="fourth">
+	   <div class="third">
+	   <div class="f"></div>
+	   <div class="e"></div>
+	   <div class="a"></div>
+	   <div class="g"></div>
+	   <div class="b"></div>
+	   <div class="c"></div>
+	   <div class="d"></div>
+	  
+	   </div>
+	   <div class="dots" id="dot">
+	   <div class="dot1"></div>
+	   <div class="dot2"></div>
+	   </div>
+	   <div class="sixth">
+	   <div class="f"></div>
+	   <div class="e"></div>
+	   <div class="a"></div>
+	   <div class="g"></div>
+	   <div class="b"></div>
+	   <div class="c"></div>
+	   <div class="d"></div>
+	   </div>
+	   <div class="seven">
+	    <div class="f"></div>
+	   <div class="e"></div>
+	   <div class="a"></div>
+	   <div class="g"></div>
+	   <div class="b"></div>
+	   <div class="c"></div>
+	   <div class="d"></div>
+	   </div>
+	   <div class="dates">
+		<div><span id="day">02</span><span id="month">06</span><span id="year">2019</span></div>
+	   
+	   </div>
+	    <h3 id="copy">&copy; Developed By Waseem</h3>
+	  
+	   
+	</div>
+	<script>
+	    
+		var a=document.getElementsByClassName('a');
+		var b=document.getElementsByClassName('b');
+		var c=document.getElementsByClassName('c');
+		var d=document.getElementsByClassName('d');
+		var e=document.getElementsByClassName('e');
+		var f=document.getElementsByClassName('f');
+		var g=document.getElementsByClassName('g');
+		var day1=document.getElementById('day');
+		var month1=document.getElementById('month');
+		var year1=document.getElementById('year');
+		
+		var x=setInterval(function core(){
+		
+		var hours=new Date().getHours();
+		var minutes=new Date().getMinutes();
+		var seconds=new Date().getSeconds();
+		var year=new Date();
+		var year2=year.getFullYear();
+       	var month=new Date();
+		var month2=month.getMonth();
+		var day=new Date();
+		var day2=day.getDay()
+		day1.innerHTML=day2;
+		month1.innerHTML=month2;
+		year1.innerHTML=year2;
+		
+		for(var be=0;be<6;be++){
+		a[be].style.background="black";
+		b[be].style.background="black";
+		c[be].style.background="black";
+		d[be].style.background="black";
+		e[be].style.background="black";
+		f[be].style.background="black";
+		g[be].style.background="black";
+		
+		
+		}
+
+		var totalHour=hours.toString();
+		var totalMinute=minutes.toString();
+		var totalSeconds=seconds.toString();
+		var firstHour=Number(totalHour[0]);
+		display(firstHour,0);
+		var secondHour=Number(totalHour[1]);
+		display(secondHour,1);
+		var firstMinute=Number(totalMinute[0]);
+		display(firstMinute,2);
+		var secondMinute=Number(totalMinute[1]);
+		display(secondMinute,3);
+		var firstSecond=Number(totalSeconds[0]);
+		display(firstSecond,4);
+		var secondSecond=Number(totalSeconds[1]);
+		display(secondSecond,5);
+		
+		},1000);
+		function display(nill,i){
+		if(nill==0||nill==2||nill==3||nill==5||nill==6||nill==7|nill==8||nill==9){
+			a[i].style.background="red";
+		}
+		if(nill==0||nill==1||nill==2||nill==3||nill==4||nill==7||nill==8||nill==9){
+		    b[i].style.background="red";
+		}
+		if(nill==0||nill==1||nill==3||nill==4||nill==5||nill==6||nill==7||nill==8||nill==9){
+			c[i].style.background="red";
+		}
+		if(nill==0||nill==2||nill==3||nill==5||nill==6||nill==8||nill==9){
+			d[i].style.background="red";
+		}
+		if(nill==0||nill==2||nill==6||nill==8){
+			e[i].style.background="red";
+		}
+		if(nill==0||nill==4||nill==5||nill==6||nill==8||nill==9){
+			f[i].style.background="red";
+		}
+		if(nill==2||nill==3||nill==4||nill==5||nill==6||nill==8||nill==9){
+		g[i].style.background="red";
+			
+		}
+		
+		}
+		
+		
+	</script>
+</body>
+</html>
